@@ -1,7 +1,11 @@
-function Book({ book }) {
+function Book({ book, borrowBook }) {
   const reserveBookButton = (
     <li>
-      <button className="btn btn-warning" style={{ width: "100%" }}>
+      <button
+        className="btn btn-warning"
+        style={{ width: "100%" }}
+        onClick={() => borrowBook(book.bookId)}
+      >
         Reserve
       </button>
     </li>
