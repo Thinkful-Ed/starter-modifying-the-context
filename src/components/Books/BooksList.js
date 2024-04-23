@@ -4,7 +4,7 @@ import { BooksContext } from "../../contexts/BooksContext";
 
 function BooksList() {
   const { books, setBooks } = useContext(BooksContext);
-  const borrowBook = (bookId) => {
+  const handleReserveButton = (bookId) => {
     const selected = books.find((book) => book.bookId === bookId);
     const index = books.indexOf(selected);
     setBooks([
@@ -15,7 +15,11 @@ function BooksList() {
   };
 
   const bookList = books.map((book) => (
-    <Book key={book.bookId} book={book} borrowBook={borrowBook} />
+    <Book
+      key={book.bookId}
+      book={book}
+      handleReserveButton={handleReserveButton}
+    />
   ));
   return (
     <div className="container mt-5">

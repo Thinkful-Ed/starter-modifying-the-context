@@ -1,10 +1,10 @@
-function Book({ book, borrowBook }) {
+function Book({ book, handleReserveButton }) {
   const reserveBookButton = (
     <li>
       <button
         className="btn btn-warning"
         style={{ width: "100%" }}
-        onClick={() => borrowBook(book.bookId)}
+        onClick={() => handleReserveButton(book.bookId)}
       >
         Reserve
       </button>
